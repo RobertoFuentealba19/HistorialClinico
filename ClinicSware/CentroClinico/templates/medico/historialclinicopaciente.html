@@ -1,0 +1,91 @@
+{% load static %}
+<!-- VENTANA -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href={% static 'css/micss.css'%}>
+    
+    <title>Historial Clinico</title>
+</head>
+<!-- VENTANA -->
+
+<!-- ENCABEZADO -->
+<body>
+    <header>
+        <a href="{% url 'index' %}" class="logo">
+            <img src="{% static 'img/clinica.png' %}" alt="logo">
+            <h2 class="nombre-empresa">CENTRO MÉDICO DOS ÁLAMOS</h2>
+        </a>
+        <nav>
+            <a href="#" class="nav-link">QUIENES SOMOS</a>
+            <a href="#" class="nav-link">ÁREA DE RECLAMOS</a>
+            <a href="#" class="nav-link">ATENCIÓN AL CLIENTE</a>
+
+            <a href="{% url 'perfilmedico' %}" class="boton-enlace">
+                <span class="contenido-enlace">
+                    <img src="{% static 'img/perfil.png' %}" class="imagen-enlace">    
+                    <span class="texto-enlace">MI PERFIL</span>
+                </span>
+            </a>
+        </nav>
+    </header>
+
+    <div class="table-container">
+        <div class="table-wrapper">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>RUT</th>
+                        <th>Nombre paciente</th>
+                        <th>Numero telefonico</th>
+                        <th>Historial clinico</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>{{ paciente.rut }}</td>
+                        <td>{{ paciente.nombre_paciente }}</td>
+                        <td>{{ paciente.numero_telefonico }}</td>
+                        <td>{{ paciente.historial_clinico }}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<!-- ENCABEZADO -->
+
+    {% comment %} <div class="table-container">
+        <div class="table-wrapper">
+            <div class="table-responsive">
+                <table class="creative-table">
+                    <tbody>
+                    <tr>
+                        <th>RUT:</th>
+                        <td>{{ paciente.rut }}</td>
+                    </tr>
+                    <tr>
+                        <th>Nombre Paciente:</th>
+                        <td>{{ paciente.nombre_paciente }}</td>
+                    </tr>
+                    <tr>
+                        <th>Numero Telefonico:</th>
+                        <td>{{ paciente.numero_telefonico }}</td>
+                    </tr>
+                    <tr>
+                        <th>Historial Clinico:</th>
+                        <td>{{ paciente.historial_clinico }}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div> 
+        </div>
+    </div> {% endcomment %}
